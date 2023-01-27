@@ -79,9 +79,9 @@ namespace UF
 		const int16 LIMBO_SIZE = 36;
 		const int16 TRIBUTE_SIZE = 5;
 		const int16 GUILD_TRIBUTE_SIZE = 2;
-		const int16 MERCHANT_SIZE = 80;
+		const int16 MERCHANT_SIZE = 200;
 		const int16 CORPSE_SIZE = POSSESSIONS_SIZE;
-		const int16 BAZAAR_SIZE = 80;
+		const int16 BAZAAR_SIZE = 200;
 		const int16 INSPECT_SIZE = 23;
 		const int16 VIEW_MOD_PC_SIZE = POSSESSIONS_SIZE;
 		const int16 VIEW_MOD_BANK_SIZE = BANK_SIZE;

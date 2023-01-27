@@ -299,7 +299,7 @@ namespace RoF
 
 		unsigned char *__emu_buffer = in->pBuffer;
 
-		in->size = 80;
+		in->size = EQ::invtype::BAZAAR_SIZE;
 
 		in->pBuffer = new unsigned char[in->size];
 
@@ -3481,11 +3481,11 @@ namespace RoF
 
 			eq->Code = emu->Code;
 			// Live actually has 200 items now, but 80 is the most our internal struct supports
-			for (uint32 i = 0; i < 200; i++)
+			for (uint32 i = 0; i < EQ::invtype::BAZAAR_SIZE; i++)
 			{
 				strncpy(eq->items[i].SerialNumber, "0000000000000000", sizeof(eq->items[i].SerialNumber));
 				eq->items[i].Unknown18 = 0;
-				if (i < 80) {
+				if (i < EQ::invtype::BAZAAR_SIZE) {
 					eq->ItemCost[i] = emu->ItemCost[i];
 				}
 				else {
@@ -5019,7 +5019,7 @@ namespace RoF
 
 			emu->Code = eq->Code;
 			// Live actually has 200 items now, but 80 is the most our internal struct supports
-			for (uint32 i = 0; i < 80; i++)
+			for (uint32 i = 0; i < EQ::invtype::BAZAAR_SIZE; i++)
 			{
 				emu->SerialNumber[i] = 0;	// eq->SerialNumber[i];
 				emu->ItemCost[i] = eq->ItemCost[i];

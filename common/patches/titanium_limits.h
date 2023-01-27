@@ -72,16 +72,16 @@ namespace Titanium
 		using namespace enum_;
 
 		const int16 POSSESSIONS_SIZE = 31;
-		const int16 BANK_SIZE = 16;
+		const int16 BANK_SIZE = 24;
 		const int16 SHARED_BANK_SIZE = 2;
 		const int16 TRADE_SIZE = 8;
 		const int16 WORLD_SIZE = 10;
 		const int16 LIMBO_SIZE = 36;
 		const int16 TRIBUTE_SIZE = 5;
 		const int16 GUILD_TRIBUTE_SIZE = 2;
-		const int16 MERCHANT_SIZE = 80;
+		const int16 MERCHANT_SIZE = 200;
 		const int16 CORPSE_SIZE = POSSESSIONS_SIZE;
-		const int16 BAZAAR_SIZE = 80;
+		const int16 BAZAAR_SIZE = 200;
 		const int16 INSPECT_SIZE = 22;
 		const int16 VIEW_MOD_PC_SIZE = POSSESSIONS_SIZE;
 		const int16 VIEW_MOD_BANK_SIZE = BANK_SIZE;
@@ -173,18 +173,18 @@ namespace Titanium
 		const int16 SHARED_BANK_BEGIN = 2500;
 		const int16 SHARED_BANK_END = (SHARED_BANK_BEGIN + invtype::SHARED_BANK_SIZE) - 1;
 
-		const int16 TRADE_BEGIN = 3000;
+		const int16 TRADE_BEGIN = 6400;
 		const int16 TRADE_END = (TRADE_BEGIN + invtype::TRADE_SIZE) - 1;
 
 		const int16 TRADE_NPC_END = (TRADE_BEGIN + invtype::TRADE_NPC_SIZE) - 1; // defined by implication
 
-		const int16 WORLD_BEGIN = 4000;
+		const int16 WORLD_BEGIN = 7000;
 		const int16 WORLD_END = (WORLD_BEGIN + invtype::WORLD_SIZE) - 1;
 
-		const int16 TRIBUTE_BEGIN = 400;
+		const int16 TRIBUTE_BEGIN = 7500;
 		const int16 TRIBUTE_END = (TRIBUTE_BEGIN + invtype::TRIBUTE_SIZE) - 1;
 
-		const int16 GUILD_TRIBUTE_BEGIN = 450;
+		const int16 GUILD_TRIBUTE_BEGIN = 7550;
 		const int16 GUILD_TRIBUTE_END = (GUILD_TRIBUTE_BEGIN + invtype::GUILD_TRIBUTE_SIZE) - 1;
 
 		const int16 CORPSE_BEGIN = invslot::slotGeneral1;
@@ -208,26 +208,26 @@ namespace Titanium
 
 		const int16 SLOT_INVALID = IINVALID;
 		const int16 SLOT_BEGIN = INULL;
-		const int16 SLOT_END = 9;
-		const int16 SLOT_COUNT = 10;
+		const int16 SLOT_END = 49;
+		const int16 SLOT_COUNT = 50;
 
 		const int16 GENERAL_BAGS_BEGIN = 251;
 		const int16 GENERAL_BAGS_COUNT = invslot::GENERAL_COUNT * SLOT_COUNT;
 		const int16 GENERAL_BAGS_END = (GENERAL_BAGS_BEGIN + GENERAL_BAGS_COUNT) - 1;
 
-		const int16 CURSOR_BAG_BEGIN = 331;
+		const int16 CURSOR_BAG_BEGIN = 2101;
 		const int16 CURSOR_BAG_COUNT = SLOT_COUNT;
 		const int16 CURSOR_BAG_END = (CURSOR_BAG_BEGIN + CURSOR_BAG_COUNT) - 1;
 
-		const int16 BANK_BAGS_BEGIN = 2031;
+		const int16 BANK_BAGS_BEGIN = 2901;
 		const int16 BANK_BAGS_COUNT = (invtype::BANK_SIZE * SLOT_COUNT);
 		const int16 BANK_BAGS_END = (BANK_BAGS_BEGIN + BANK_BAGS_COUNT) - 1;
 
-		const int16 SHARED_BANK_BAGS_BEGIN = 2531;
+		const int16 SHARED_BANK_BAGS_BEGIN = 2600;
 		const int16 SHARED_BANK_BAGS_COUNT = invtype::SHARED_BANK_SIZE * SLOT_COUNT;
 		const int16 SHARED_BANK_BAGS_END = (SHARED_BANK_BAGS_BEGIN + SHARED_BANK_BAGS_COUNT) - 1;
 
-		const int16 TRADE_BAGS_BEGIN = 3031;
+		const int16 TRADE_BAGS_BEGIN = 6501;
 		const int16 TRADE_BAGS_COUNT = invtype::TRADE_SIZE * SLOT_COUNT;
 		const int16 TRADE_BAGS_END = (TRADE_BAGS_BEGIN + TRADE_BAGS_COUNT) - 1;
 

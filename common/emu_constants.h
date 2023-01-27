@@ -148,6 +148,7 @@ namespace EQ
 		using Titanium::invbag::SLOT_BEGIN;
 		using Titanium::invbag::SLOT_END;
 		using Titanium::invbag::SLOT_COUNT;
+		using Titanium::invtype::BANK_SIZE;
 
 		using Titanium::invbag::GENERAL_BAGS_BEGIN;
 		const int16 GENERAL_BAGS_COUNT = invslot::GENERAL_COUNT * SLOT_COUNT;
@@ -156,16 +157,16 @@ namespace EQ
 		const int16 GENERAL_BAGS_8_COUNT = 8 * SLOT_COUNT;
 		const int16 GENERAL_BAGS_8_END = (GENERAL_BAGS_BEGIN + GENERAL_BAGS_8_COUNT) - 1;
 
-		const int16 CURSOR_BAG_BEGIN = 351;
+		const int16 CURSOR_BAG_BEGIN = 1100;
 		const int16 CURSOR_BAG_COUNT = SLOT_COUNT;
 		const int16 CURSOR_BAG_END = (CURSOR_BAG_BEGIN + CURSOR_BAG_COUNT) - 1;
 
 		using Titanium::invbag::BANK_BAGS_BEGIN;
-		const int16 BANK_BAGS_COUNT = (invtype::BANK_SIZE * SLOT_COUNT);
-		const int16 BANK_BAGS_END = (BANK_BAGS_BEGIN + BANK_BAGS_COUNT) - 1;
+		const int16 BANK_BAGS_COUNT = (invtype::BANK_SIZE * SLOT_COUNT); 
+		const int16 BANK_BAGS_END = (BANK_BAGS_BEGIN + BANK_BAGS_COUNT) - 1; 
 
-		const int16 BANK_BAGS_16_COUNT = 16 * SLOT_COUNT;
-		const int16 BANK_BAGS_16_END = (BANK_BAGS_BEGIN + BANK_BAGS_16_COUNT) - 1;
+		const int16 BANK_BAGS_16_COUNT = BANK_SIZE * SLOT_COUNT; // this doesn't seem to be referenced anywhere
+		const int16 BANK_BAGS_16_END = (BANK_BAGS_BEGIN + BANK_BAGS_16_COUNT) - 1; // or this
 
 		using Titanium::invbag::SHARED_BANK_BAGS_BEGIN;
 		const int16 SHARED_BANK_BAGS_COUNT = invtype::SHARED_BANK_SIZE * SLOT_COUNT;

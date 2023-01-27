@@ -279,7 +279,7 @@ namespace UF
 
 		unsigned char *__emu_buffer = in->pBuffer;
 
-		in->size = 80;
+		in->size = EQ::invtype::BAZAAR_SIZE;
 
 		in->pBuffer = new unsigned char[in->size];
 
