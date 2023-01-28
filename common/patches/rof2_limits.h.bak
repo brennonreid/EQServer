@@ -17,21 +17,21 @@
 	Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 */
 
-#ifndef COMMON_ROF_LIMITS_H
-#define COMMON_ROF_LIMITS_H
+#ifndef COMMON_ROF2_LIMITS_H
+#define COMMON_ROF2_LIMITS_H
 
 #include "../types.h"
 #include "../emu_versions.h"
 #include "../skills.h"
 
 
-namespace RoF
+namespace RoF2
 {
 	const int16 IINVALID = -1;
 	const int16 INULL = 0;
 
 	namespace inventory {
-		inline EQ::versions::ClientVersion GetInventoryRef() { return EQ::versions::ClientVersion::RoF; }
+		inline EQ::versions::ClientVersion GetInventoryRef() { return EQ::versions::ClientVersion::RoF2; }
 
 		const bool ConcatenateInvTypeLimbo = false;
 
@@ -43,7 +43,7 @@ namespace RoF
 	} /*inventory*/
 
 	namespace invtype {
-		inline EQ::versions::ClientVersion GetInvTypeRef() { return EQ::versions::ClientVersion::RoF; }
+		inline EQ::versions::ClientVersion GetInvTypeRef() { return EQ::versions::ClientVersion::RoF2; }
 
 		namespace enum_ {
 			enum InventoryTypes : int16 {
@@ -70,6 +70,7 @@ namespace RoF
 				typeArchived,
 				typeMail,
 				typeGuildTrophyTribute,
+				typeKrono,
 				typeOther
 			};
 
@@ -99,6 +100,7 @@ namespace RoF
 		const int16 ARCHIVED_SIZE = 0;//unknown
 		const int16 MAIL_SIZE = 0;//unknown
 		const int16 GUILD_TROPHY_TRIBUTE_SIZE = 0;//unknown
+		const int16 KRONO_SIZE = 0;//unknown
 		const int16 OTHER_SIZE = 0;//unknown
 
 		const int16 TRADE_NPC_SIZE = 4; // defined by implication
@@ -116,7 +118,7 @@ namespace RoF
 	} /*invtype*/
 
 	namespace invslot {
-		inline EQ::versions::ClientVersion GetInvSlotRef() { return EQ::versions::ClientVersion::RoF; }
+		inline EQ::versions::ClientVersion GetInvSlotRef() { return EQ::versions::ClientVersion::RoF2; }
 
 		namespace enum_ {
 			enum InventorySlots : int16 {
@@ -168,11 +170,11 @@ namespace RoF
 
 		const int16 EQUIPMENT_BEGIN = slotCharm;
 		const int16 EQUIPMENT_END = slotAmmo;
-		const int16 EQUIPMENT_COUNT = (EQUIPMENT_END - EQUIPMENT_BEGIN + 1);
+		const int16 EQUIPMENT_COUNT = (EQUIPMENT_END - EQUIPMENT_BEGIN) + 1;
 
 		const int16 GENERAL_BEGIN = slotGeneral1;
 		const int16 GENERAL_END = slotGeneral10;
-		const int16 GENERAL_COUNT = (GENERAL_END - GENERAL_BEGIN + 1);
+		const int16 GENERAL_COUNT = (GENERAL_END - GENERAL_BEGIN) + 1;
 
 		const int16 BONUS_BEGIN = invslot::slotCharm;
 		const int16 BONUS_STAT_END = invslot::slotPowerSource;
@@ -194,7 +196,7 @@ namespace RoF
 	} /*invslot*/
 
 	namespace invbag {
-		inline EQ::versions::ClientVersion GetInvBagRef() { return EQ::versions::ClientVersion::RoF; }
+		inline EQ::versions::ClientVersion GetInvBagRef() { return EQ::versions::ClientVersion::RoF2; }
 
 		const int16 SLOT_INVALID = IINVALID;
 		const int16 SLOT_BEGIN = INULL;
@@ -206,7 +208,7 @@ namespace RoF
 	} /*invbag*/
 
 	namespace invaug {
-		inline EQ::versions::ClientVersion GetInvAugRef() { return EQ::versions::ClientVersion::RoF; }
+		inline EQ::versions::ClientVersion GetInvAugRef() { return EQ::versions::ClientVersion::RoF2; }
 
 		const int16 SOCKET_INVALID = IINVALID;
 		const int16 SOCKET_BEGIN = INULL;
@@ -218,7 +220,14 @@ namespace RoF
 	} /*invaug*/
 
 	namespace item {
-		inline EQ::versions::ClientVersion GetItemRef() { return EQ::versions::ClientVersion::RoF; }
+		inline EQ::versions::ClientVersion GetItemRef() { return EQ::versions::ClientVersion::RoF2; }
+
+		//enum Unknown : int { // looks like item class..but, RoF has it too - nothing in UF-
+		//	Unknown1 = 0,
+		//	Unknown2 = 1,
+		//	Unknown3 = 2,
+		//	Unknown4 = 5 // krono?
+		//};
 
 		enum ItemPacketType : int {
 			ItemPacketMerchant = 100,
@@ -234,13 +243,13 @@ namespace RoF
 			ItemPacket11 = 111,
 			ItemPacket12 = 112,
 			ItemPacketRecovery = 113,
-			ItemPacket14 = 115
+			ItemPacket14 = 115 // Parcel? adds to merchant window too
 		};
 
 	} /*item*/
 
 	namespace profile {
-		inline EQ::versions::ClientVersion GetProfileRef() { return EQ::versions::ClientVersion::RoF; }
+		inline EQ::versions::ClientVersion GetProfileRef() { return EQ::versions::ClientVersion::RoF2; }
 
 		const int16 BANDOLIERS_SIZE = 20;		// number of bandolier instances
 		const int16 BANDOLIER_ITEM_COUNT = 4;	// number of equipment slots in bandolier instance
@@ -252,7 +261,7 @@ namespace RoF
 	} /*profile*/
 
 	namespace constants {
-		inline EQ::versions::ClientVersion GetConstantsRef() { return EQ::versions::ClientVersion::RoF; }
+		inline EQ::versions::ClientVersion GetConstantsRef() { return EQ::versions::ClientVersion::RoF2; }
 
 		const EQ::expansions::Expansion EXPANSION = EQ::expansions::Expansion::RoF;
 		const uint32 EXPANSION_BIT = EQ::expansions::bitRoF;
@@ -260,26 +269,26 @@ namespace RoF
 
 		const size_t CHARACTER_CREATION_LIMIT = 12;
 
-		const size_t SAY_LINK_BODY_SIZE = 55;
+		const size_t SAY_LINK_BODY_SIZE = 56;
 
 	} /*constants*/
 
 	namespace behavior {
-		inline EQ::versions::ClientVersion GetBehaviorRef() { return EQ::versions::ClientVersion::RoF; }
+		inline EQ::versions::ClientVersion GetBehaviorRef() { return EQ::versions::ClientVersion::RoF2; }
 
 		const bool CoinHasWeight = false;
 
 	} /*behavior*/
 
 	namespace skills {
-		inline EQ::versions::ClientVersion GetSkillsRef() { return EQ::versions::ClientVersion::RoF; }
+		inline EQ::versions::ClientVersion GetSkillsRef() { return EQ::versions::ClientVersion::RoF2; }
 
-		const size_t LastUsableSkill = EQ::skills::SkillTripleAttack;
+		const size_t LastUsableSkill = EQ::skills::Skill2HPiercing;
 
 	} /*skills*/
 
 	namespace spells {
-		inline EQ::versions::ClientVersion GetSkillsRef() { return EQ::versions::ClientVersion::RoF; }
+		inline EQ::versions::ClientVersion GetSkillsRef() { return EQ::versions::ClientVersion::RoF2; }
 		
 		enum class CastingSlot : uint32 {
 			Gem1 = 0,
@@ -294,7 +303,7 @@ namespace RoF
 			Gem10 = 9,
 			Gem11 = 10,
 			Gem12 = 11,
-			MaxGems = 16, // fallacy..only 12 slots are useable
+			MaxGems = 16, // fallacy..only 12 slot are useable...
 			Item = 12,
 			Discipline = 13,
 			AltAbility = 0xFF
@@ -314,6 +323,6 @@ namespace RoF
 
 	} /*spells*/
 
-}; /*RoF*/
+}; /*RoF2*/
 
-#endif /*COMMON_ROF_LIMITS_H*/
+#endif /*COMMON_ROF2_LIMITS_H*/
